@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+</head>
+ <body>
+<table>
+  <tr>
+    <thead>
+      <th>Title</th>
+      <th>Text</th>
+      <th>CreationDate</th>
+      <th>ExperationDate</th>
+      <th>ID</th>
+      <th>Tag</th>
+    </thead>
+  </tr>
+  <tbody>
+    <tr th:each="task : ${tasks}">
+      <th  th:text="${task.title}"></th>
+      <th  th:text="${task.text}"></th>
+      <th  th:text="${task.creationDate}"></th>
+      <th  th:text="${task.experationDate}"></th>
+      <th  th:text="${task.id}"></th>
+      <th  th:text="${task.tag}"></th>
+    </tr>
+  </tbody>
+</table>
+<form>
+
+</form>
+
+<p><button style="background: #fdeaa8; width: 80px; height: 40px; border-radius: 5px; box-shadow: 0px 1px 3px; font-size: 20px;">Кнопка1</button></p>
+
+</body>
+</html>
