@@ -56,12 +56,17 @@ public class MainControler{
         return "login";
     }
 
+    @GetMapping("/taskAdd")
+    public String taskAdd(Map<String, Object> model) {
+    return "taskAdd";
+    }
 
     @GetMapping("/tasks")
     public String getTasks(Map<String, Object> model) {
         model.put("tasks",taskDao.getAllTask());
         return "tasks";
     }
+
 
 }
 
