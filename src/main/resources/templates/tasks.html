@@ -23,16 +23,16 @@
       <th  th:text="${task.experationDate}"></th>
       <th  th:text="${task.id}"></th>
       <th  th:text="${task.tag}"></th>
-      <th> <input type="submit" name="" value="Edit"></th>
+      <th> <a th:href="@{/editTask/{id}(id=${task.id})}"> <button onclick="">Edit</button></a></th>
     </tr>
   </tbody>
 </table>
 
-  <a href="taskAdd.html">
+  <a href="taskAdd">
     <button onclick="">Add</button>
   </a>
 
-  <a href="taskAdd.html">
+  <a href="taskAdd">
     <button onauxclick="">Delete</button>
   </a>
 

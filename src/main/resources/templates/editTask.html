@@ -1,0 +1,41 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<form action="/taskAdd" method="post" >
+    <table>
+        <tr>
+            <thead>
+            <th>Title</th>
+            <th>Text</th>
+            <th>CreationDate</th>
+            <th>ExperationDate</th>
+            <th>ID</th>
+            <th>Tag</th>
+            </thead>
+        </tr>
+        <tbody>
+        <tr>
+            <th> <input type="text" id="title" name="title" th:value="${task.title}"></th>
+            <th> <input type="text" id="text" name="text" th:value="${task.text}"></th>
+            <th> <input type="text" name="creationDate" th:value="${task.creationDate}"></th>
+            <th> <input type="text" name="experationDate" th:value="${task.experationDate}"></th>
+            <th> <input type="text" id="id" name=id th:value="${task.id}"></th>
+            <th> <input type="text" name="Tag" th:value="${task.Tag}"></th>
+        </tr>
+        </tbody>
+    </table>
+    <button type="submit">Apply</button>
+</form>
+
+<a href="tasks">
+    <button onclick="">Return</button>
+</a>
+
+<script>
+
+</script>
+
+</body>
+</html>

@@ -3,34 +3,33 @@
 <meta charset="UTF-8">
 </head>
  <body>
-<table>
-  <tr>
-    <thead>
-      <th>Title</th>
-      <th>Text</th>
-      <th>CreationDate</th>
-      <th>ExperationDate</th>
-      <th>ID</th>
-      <th>Tag</th>
-    </thead>
-  </tr>
-  <tbody>
+ <form action="taskAdd" method="post" >
+    <table>
       <tr>
-          <th> <input type="text" name="Title" value=""></th>
-          <th> <input type="text" name="Text" value=""></th>
-          <th> <input type="text" name="CreationDate" value=""></th>
-          <th> <input type="text" name="ExperationDate" value=""></th>
-          <th> <input type="text" name="ID" value=""></th>
-          <th> <input type="text" name="Tag" value=""></th>
+        <thead>
+          <th>Title</th>
+          <th>Text</th>
+          <th>CreationDate</th>
+          <th>ExperationDate</th>
+          <th>ID</th>
+          <th>Tag</th>
+        </thead>
       </tr>
-  </tbody>
-</table>
+      <tbody>
+          <tr>
+              <th> <input type="text" id="title" name="title" value=""></th>
+              <th> <input type="text" id="text" name="text" value=""></th>
+              <th> <input type="text" name="creationDate" value=""></th>
+              <th> <input type="text" name="experationDate" value=""></th>
+              <th> <input type="text" id="id" name=id value=""></th>
+              <th> <input type="text" name="Tag" value=""></th>
+          </tr>
+      </tbody>
+    </table>
+     <button type="submit">Apply</button>
+ </form>
 
-<a href="tasks.html">
-    <button onclick="">Apply</button>
-</a>
-
-<a href="login.html">
+<a href="tasks">
     <button onclick="">Return</button>
 </a>
 

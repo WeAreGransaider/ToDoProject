@@ -24,20 +24,4 @@ public class PersonDTO {
     public static PersonDTO personDTOConvertor (Person person) {
         return new PersonDTO(person.getName(), person.getSurName());
     }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    public String getSurName() {
-//        return surName;
-//    }
-//
-//    public void setSurName(String surName) {
-//        this.surName = surName;
-//    }
 }
