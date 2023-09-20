@@ -1,9 +1,14 @@
 package com.example.demo.DTO;
 
 import com.example.demo.Enity.Person;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.stereotype.Service;
 
-
+@Getter
+@Setter
+@EqualsAndHashCode
 public class PersonDTO {
 
     private String name;

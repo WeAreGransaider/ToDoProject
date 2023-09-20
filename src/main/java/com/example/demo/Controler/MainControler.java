@@ -56,9 +56,19 @@ public class MainControler{
         return "login";
     }
 
+    @GetMapping("/registration")
+    public String registration(Map<String, Object> model) {
+        return "registration";
+    }
+
     @GetMapping("/taskAdd")
     public String taskAdd(Map<String, Object> model) {
     return "taskAdd";
+    }
+
+    @PutMapping
+    public String setTask(Map<String, Object> model) {
+        return "task";
     }
 
     @GetMapping("/tasks")
@@ -68,15 +78,5 @@ public class MainControler{
     }
 
 
+
 }
-
-
-
-//@Controller
-//public class MainController {
-//
-//
-//
-//
-//
-//}

@@ -1,23 +1,26 @@
 package com.example.demo.Enity;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+@Getter
+@Setter
+@EqualsAndHashCode
 public class Person {
+
     private String name;
-
     private String surName;
-
-    private int age;
-
-    private int id;
+    private Integer age;
+    private final Integer id;
 
 
 
-    public Person(String name,String surName, int age,int id) {
+    public Person(String name,String surName, Integer age,Integer id) {
         this.name = name;
         this.age = age;
         this.surName = surName;
         this.id = id;
     }
-
 
 
     public String getName() {
