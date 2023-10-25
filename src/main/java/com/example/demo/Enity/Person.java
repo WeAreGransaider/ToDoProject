@@ -1,10 +1,14 @@
 package com.example.demo.Enity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 @Getter
 @Setter
+@Entity
+@Table(name = "Person")
 @EqualsAndHashCode
 public class Person {
 

@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Component
-public class TaskDaoArray implements TaskDao{
+
+public class TaskDaoArray {
 
     private ArrayList<Task> listTask;
     {

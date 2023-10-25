@@ -1,11 +1,16 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/css/taskStyle.css}">
 </head>
- <body>
-<table>
-  <tr>
-    <thead>
+<body>
+<div class="Space" >>
+  <video th:src="Space.mp4" autoplay loop muted></video>
+</div>
+<div class="taskTable">
+  <table>
+    <tr>
+      <thead>
       <th>Title</th>
       <th>Text</th>
       <th>CreationDate</th>
@@ -13,9 +18,9 @@
       <th>ID</th>
       <th>Tag</th>
       <th> </th>
-    </thead>
-  </tr>
-  <tbody>
+      </thead>
+    </tr>
+    <tbody>
     <tr th:each="task : ${tasks}">
       <th  th:text="${task.title}"></th>
       <th  th:text="${task.text}"></th>
@@ -25,17 +30,14 @@
       <th  th:text="${task.tag}"></th>
       <th> <a th:href="@{/editTask/{id}(id=${task.id})}"> <button onclick="">Edit</button></a></th>
     </tr>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-  <a href="taskAdd">
-    <button onclick="">Add</button>
-  </a>
-
-  <a href="taskAdd">
-    <button onauxclick="">Delete</button>
-  </a>
-
+  <div class="styleButton">
+    <input type="button" onclick="location.href= 'taskAdd'" value="Add">
+    <input type="button" onclick="location.href= 'taskAdd'" value="Delete">
+  </div>
+</div>
 <form>
 
 </form>

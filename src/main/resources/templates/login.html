@@ -1,31 +1,32 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="UTF-8">
-<title> Umbrella Corporation </title>
+    <meta charset="UTF-8">
+    <title> Umbrella Corporation </title>
+    <link rel="stylesheet" th:href="@{/css/loginStyle.css}">
 </head>
- <body>
+<body>
+<section class="SpaceSection">
+    <div class="Space" >>
+        <video th:src="@{Space.mp4}" src="Space.mp4" autoplay loop muted></video>
+    </div>
+    <div class="registrationLogin">
+        <form name="test" method="get" th:action="@{/tasks}">
 
-<form name="test" method="get" th:action="@{/tasks}">
+            <p><b> Login: </b><br>
+                <input class="textLogin" type="text" size="40">
 
-<p><b> Логин: </b><br>
-    <input type="text" size="40">
+            <p><b> Password: </b><br>
+                <input class="textPassword" type="text" size="40">
+            </p>
 
-<p><b> Пороль: </b><br>
-    <input type="text" size="40">
-</p>
-
-    <a href="tasks">
-        <button onclick="">Login</button>
-    </a>
-
-    <a href="registration">
-        <button onclick="">Registration</button>
-    </a>
-</form>
-
- <script>
-
- </script>
+            <div class="styleButton">
+                <input type="button" onclick="location.href= 'tasks'" value="Login">
+                <input type="button" onclick="location.href= 'registration'" value="Registration">
+            </div>
+        </form>
+    </div>
+</section>
 </body>
 </html>
+
  

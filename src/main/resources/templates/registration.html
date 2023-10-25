@@ -1,24 +1,25 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
  <meta charset="UTF-8">
+ <link rel="stylesheet" th:href="@{/css/registrationStyle.css}">
 </head>
- <body>
+<body>
+<div class="Space" >>
+ <video th:src="Space.mp4" autoplay loop muted></video>
+</div>
+<div class="regLog">
  <p><b> Введите Логин:</b></p>
-  <p><input type="text" name="" value=""></p>
+ <p><input type="text" name="" value=""></p>
  <p><b> Введите Пароль:</b></p>
-  <p><input type="text" name="" value=""></p>
+ <p><input type="text" name="" value=""></p>
+ <div class="styleButton">
+  <input type="button" onclick="location.href = 'login'" value="Back">
+  <input type="button" onclick="location.href = 'tasks'" value="Tasks">
+ </div>
+</div>
+<script>
 
- <a href="tasks">
-  <button onclick=""> Apply</button>
- </a>
+</script>
 
- <a href="login">
-  <button onclick="">Back</button>
- </a>
-
- <script>
-
- </script>
-
- </body>
+</body>
 </html>

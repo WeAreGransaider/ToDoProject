@@ -1,13 +1,18 @@
 package com.example.demo.Enity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import java.util.ArrayList;
 import java.util.Date;
 
 @Getter
 @Setter
+@Entity
+@Table(name = "Task")
 @EqualsAndHashCode
 public class Task {
 
