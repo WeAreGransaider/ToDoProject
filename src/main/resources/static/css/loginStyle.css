@@ -1,36 +1,130 @@
-*,
-*::before{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+
+* {
+	margin: 0px;
+	padding: 0px;
 }
 
-.Space{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
+.area {
+	position:fixed;
+	background: rgba(0,0,0);
+	height:100%;
+	width:100%;
+}
 
-  .Space video {
-    /* Make video to at least 100% wide and tall */
-    min-width: 100%;
-    min-height: 100%;
-    /* Setting width & height to auto prevents the browser from stretching or squishing the video */
-    width: auto;
-    height: auto;
-    /* Center the video */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-  }
+.cubes {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
 
+.cubes li{
+	position: absolute;
+	display: block;
+	height: 100px;
+	width: 100px;
+	background: rgba(255,255,255,0.9);
+	animation:0;
+	border-radius: 10%;
+	bottom: 185px;
+}
 
-body{
-    margin: 0px;
+.cubes li:nth-child(1){
+	left: 31%;
+	height: 25px;
+	width: 25px;
+	animation:animateSmall 2s linear infinite;
+	animation-delay: 1s;
+}
+
+.cubes li:nth-child(2){
+	left: 33%;
+	height: 100px;
+	width: 100px;
+}
+
+.cubes li:nth-child(3){
+	left: 40%;
+	height: 60px;
+	width: 60px;
+}
+
+.cubes li:nth-child(4){
+	left: 681px;
+	height: 40px;
+	width: 40px;
+}
+
+.cubes li:nth-child(5){
+	left: 727px;
+	height: 75px;
+	width: 75px;
+}
+
+.cubes li:nth-child(6){
+	left: 809px;
+	height: 30px;
+	width: 30px;
+	animation:animateSmall 2s linear infinite;
+	animation-delay: 2s;
+}
+
+.cubes li:nth-child(7){
+	left: 846px;
+	height: 115px;
+	width: 115px;
+}
+
+.cubes li:nth-child(8){
+	left: 967px;
+	height: 25px;
+	width: 25px;
+	animation:animateSmall 2s linear infinite;
+	animation-delay: 4s;
+}
+
+.cubes li:nth-child(9){
+	left: 998px;
+	height: 30px;
+	width: 30px;
+}
+
+.cubes li:nth-child(10){
+	left: 1035px;
+	height: 80px;
+	width: 80px;
+}
+
+.cubes li:nth-child(11){
+	left: 1121px;
+	height: 15px;
+	width: 15px;
+	animation:animateSmall 2s linear infinite;
+	animation-delay: 6s;
+}
+
+.cubes li:nth-child(12){
+	left: 30%;
+	height: 2px;
+	width: 692px;
+	bottom: 180px;
+	animation:0;
+	box-shadow: 20px 20px 20px rgba(255,255,255,1);
+}
+
+@keyframes animateSmall{
+
+	0%{
+		transform: translateY(0px) rotate(0deg);
+	}
+
+	50%{
+		transform: translateY(-100px) rotate(-200deg);
+	}
+
+	100%{
+		transform: translateY(0px) rotate(0deg);
+	}
 }
 
 .registrationLogin {
@@ -61,17 +155,17 @@ body{
     text-align: center;
     text-decoration: none;
     outline: none;
-    color: #fff;
-    background-color: blue;
+    color: black;
+    background-color: white;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
 }
 
-.styleButton input:hover {background-color: blue}
+.styleButton input:hover {background-color: white}
 
 .styleButton input:active {
-  background-color: blue;
+  background-color: white;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }

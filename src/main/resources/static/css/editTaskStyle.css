@@ -1,36 +1,192 @@
-*,
-*::before{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+*{
+    margin: 0px;
+    padding: 0px;
 }
 
-.Space{
+body{
+	position: fixed;
+	width: 100%;
+    height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.area{
+    background: rgba(0,0,0);
+    width: 100%;
+    height: 100%;
+}
+
+.circles{
     position: absolute;
     top: 0;
-    bottom: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
-  }
+}
 
-  .Space video {
-    /* Make video to at least 100% wide and tall */
-    min-width: 100%;
-    min-height: 100%;
-    /* Setting width & height to auto prevents the browser from stretching or squishing the video */
-    width: auto;
-    height: auto;
-    /* Center the video */
+.circles li{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-  }
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 50px;
+    height: 50px;
+	background: rgba(255, 255, 255, 0.5);
+    animation-delay: 0s;
+	animation-duration: 20s;
+}
 
 
-body{
-    margin: 0px;
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+	background: rgba(255, 255, 255, 0.4);
+    animation-delay: 2s;
+    animation-duration: 22s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+	background: rgba(255, 255, 255, 0.1);
+    animation-delay: 4s;
+	animation-duration: 31s;
+}
+
+.circles li:nth-child(4){
+    left: 44%;
+    width: 50px;
+    height: 50px;
+	background: rgba(255, 255, 255, 0.4);
+    animation-delay: 0s;
+    animation-duration: 28s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+	background: rgba(255, 255, 255, 0.3);
+    animation-delay: 0s;
+	animation-duration: 24s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 70px;
+    height: 70px;
+	background: rgba(255, 255, 255, 0.2);
+    animation-delay: 3s;
+	animation-duration: 31s;
+}
+
+.circles li:nth-child(7){
+    left: 30%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 7s;
+	animation-duration: 23s;
+}
+
+.circles li:nth-child(8){
+    left: 40%;
+    width: 25px;
+    height: 25px;
+	background: rgba(255, 255, 255, 0.5);
+    animation-delay: 15s;
+    animation-duration: 25s;
+}
+
+.circles li:nth-child(9){
+    left: 35%;
+    width: 40px;
+    height: 40px;
+	background: rgba(255, 255, 255, 0.4);
+    animation-delay: 0s;
+    animation-duration: 25s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 75px;
+    height: 75px;
+	background: rgba(255, 255, 255, 0.4);
+    animation-delay: 0s;
+    animation-duration: 21s;
+}
+
+.circles li:nth-child(11){
+	width: 100%;
+	height: 20px;
+	background: rgba(255, 255, 255, 1);
+	animation: 0;
+	bottom: -22px;
+	box-shadow: 0 -20px 20px rgba(255, 255, 255, 1);
+}
+
+.circles li:nth-child(12){
+    left: 20%;
+    width: 75px;
+    height: 75px;
+	background: rgba(255, 255, 255, 0.4);
+    animation-delay: 30s;
+    animation-duration: 21s;
+}
+
+.circles li:nth-child(13){
+    left: 60%;
+    width: 100px;
+    height: 100px;
+	background: rgba(255, 255, 255, 0.4);
+    animation-delay: 10s;
+    animation-duration: 25s;
+}
+
+.circles li:nth-child(14){
+    left: 10%;
+    width: 90px;
+    height: 90px;
+	background: rgba(255, 255, 255, 0.4);
+    animation-delay: 11s;
+    animation-duration: 21s;
+}
+
+.circles li:nth-child(15){
+    left: 85%;
+    width: 44px;
+    height: 44px;
+	background: rgba(255, 255, 255, 0.4);
+    animation-delay: 25s;
+    animation-duration: 21s;
+}
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 10%;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 10%;
+    }
+
 }
 
 .editTask {
@@ -74,25 +230,25 @@ body{
   text-align: center;
   text-decoration: none;
   outline: none;
-  color: #fff;
-  background-color: blue;
+  color: black;
+  background-color: white;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
 
-.styleButton input:hover {background-color: blue}
+.styleButton input:hover {background-color: white}
 
 .styleButton input:active {
-  background-color: blue;
+  background-color: white;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
-.styleButton submit:hover {background-color: blue}
+.styleButton submit:hover {background-color: white}
 
 .styleButton submit:active {
-  background-color: blue;
+  background-color: white;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }

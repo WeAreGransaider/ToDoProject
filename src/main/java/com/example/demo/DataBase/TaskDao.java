@@ -7,9 +7,7 @@ import java.util.List;
 
 public interface TaskDao extends JpaRepository<Task,Long> {
 
-    List<Task> getAllTask();
-
-    void saveTask(Task task);
+    List<Task> findAll();
 
     Task getById(Integer id);
 

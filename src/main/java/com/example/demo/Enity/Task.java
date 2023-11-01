@@ -1,10 +1,9 @@
 package com.example.demo.Enity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -20,14 +19,17 @@ public class Task {
     private String text;
     private Date creationDate;
     private Date experationDate;
-    private final Integer id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private final Long id;
 
     private ArrayList<String> tag;
 
 
 
 
-    public Task(String title, String text, Date creationDate, Date experationDate,Integer id,ArrayList<String> tag) {
+    public Task(String title, String text, Date creationDate, Date experationDate,Long id,ArrayList<String> tag) {
         this.title = title;
         this.text = text;
         this.creationDate = creationDate;

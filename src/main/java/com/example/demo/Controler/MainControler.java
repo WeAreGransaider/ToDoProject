@@ -1,7 +1,6 @@
 package com.example.demo.Controler;
 
 import com.example.demo.DataBase.TaskDao;
-import com.example.demo.DataBase.TaskDaoArray;
 import com.example.demo.Enity.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -44,21 +43,22 @@ public class MainControler{
     }
 
     @PostMapping("/taskAdd")
-    public String setTask(@RequestParam String title,@RequestParam String text,@RequestParam Integer id,Map<String, Object> model) {
-        taskDao.saveTask(new Task(title,text,new Date(),new Date(),id,new ArrayList<>()));
-        model.put("tasks",taskDao.getAllTask());
+    public String setTask(@RequestParam String title,@RequestParam String text,@RequestParam Long id,Map<String, Object> model) {
+        Task task = new Task(title,text,new Date(),new Date(),id,new ArrayList<>());
+        taskDao.saveAndFlush(task);
+        model.put("tasks",taskDao.findAll());
         return "tasks";
     }
 
     @GetMapping("/editTask/{id}")
-    public String getTasksById(@PathVariable Integer id, Map<String, Object> model) {
+    public String getTasksById(@PathVariable Long id, Map<String, Object> model) {
         model.put("task",taskDao.getById(id));
         return "editTask";
     }
 
     @GetMapping("/tasks")
     public String getTasks(Map<String, Object> model) {
-        model.put("tasks",taskDao.getAllTask());
+        model.put("tasks",taskDao.findAll());
         return "tasks";
     }
 

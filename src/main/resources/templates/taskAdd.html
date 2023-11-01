@@ -4,9 +4,29 @@
     <link rel="stylesheet" th:href="@{/css/taskAddStyle.css}">
 </head>
 <body>
-<div class="Space" >>
-    <video th:src="Space.mp4" autoplay loop muted></video>
-</div>
+<div class="area" >
+
+    <ul class="circles">
+        <li value = "1"></li>
+        <li value = "2"></li>
+        <li value = "3"></li>
+        <li value = "4"></li>
+        <li value = "5"></li>
+        <li value = "6"></li>
+        <li value = "7"></li>
+        <li value = "8"></li>
+        <li value = "9"></li>
+        <li value = "10"></li>
+
+        <li value = "11"></li>
+
+        <li value = "12"></li>
+        <li value = "13"></li>
+        <li value = "14"></li>
+        <li value = "15"></li>
+    </ul>
+
+</div >
 <div class="taskAddTable">
     <form action="taskAdd" method="post" >
         <table>
@@ -33,7 +53,7 @@
         </table>
     </form>
     <div class="styleButton">
-        <input type="submit" onclick="" value="Apply">
+        <input type="submit" onclick="location.href= 'taskAdd'" value="Apply">
         <input type="button" onclick="location.href= 'tasks'" value="Return">
     </div>
 </div>
