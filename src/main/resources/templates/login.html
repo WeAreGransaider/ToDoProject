@@ -22,17 +22,17 @@
         </ul>
     </div>
     <div class="registrationLogin">
-        <form name="test" method="get" th:action="@{/tasks}">
+        <form name="test" method="post" th:action="@{/login}">
 
             <p><b> Login: </b><br>
-                <input class="textLogin" type="text" size="40">
+                <input class="textLogin" id="login" name="login" type="text" size="40">
 
             <p><b> Password: </b><br>
-                <input class="textPassword" type="text" size="40">
+                <input class="textPassword" id="password" name="password" type="text" size="40">
             </p>
 
             <div class="styleButton">
-                <input type="button" onclick="location.href= 'tasks'" value="Login">
+                <input type="submit" value="Login">
                 <input type="button" onclick="location.href= 'registration'" value="Registration">
             </div>
         </form>

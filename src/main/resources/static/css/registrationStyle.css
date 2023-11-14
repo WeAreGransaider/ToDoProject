@@ -209,6 +209,10 @@
   font-size: 1vw;
 }
 
+.regLog b {
+  font-size: 0.95vw;
+}
+
 .styleButton input {
   font-size: 1vw;
   display: inline-block;

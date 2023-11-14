@@ -9,6 +9,9 @@ public interface PersonDao extends JpaRepository<Person,Long>{
 
     Person getById(Integer Id);
 
-    Person getByName(String name);
+    Person getByNameAndSurName(String name,String surName);
 
+    Person getByLogin(String login);
+
+    Long deleteById(Integer id);
 }

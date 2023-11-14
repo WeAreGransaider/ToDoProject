@@ -11,4 +11,8 @@ public interface TaskDao extends JpaRepository<Task,Long> {
 
     Task getById(Integer id);
 
+    Task getByTitle(String title);
+
+    Long deleteById(Integer id);
+
 }

@@ -22,12 +22,12 @@ public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private final Long id;
+    private Long id;
 
     private ArrayList<String> tag;
 
-
-
+    public Task() {
+    }
 
     public Task(String title, String text, Date creationDate, Date experationDate,Long id,ArrayList<String> tag) {
         this.title = title;
@@ -37,4 +37,7 @@ public class Task {
         this.id = id;
         this.tag = tag;
     }
+
+
+
 }

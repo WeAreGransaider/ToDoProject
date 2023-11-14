@@ -28,14 +28,20 @@
 
 </div >
 <div class="regLog">
- <p><b> Введите Логин:</b></p>
- <p><input type="text" name="" value=""></p>
- <p><b> Введите Пароль:</b></p>
- <p><input type="text" name="" value=""></p>
- <div class="styleButton">
-  <input type="button" onclick="location.href = 'login'" value="Back">
-  <input type="button" onclick="location.href = 'tasks'" value="Tasks">
- </div>
+ <form action="registration" method="post">
+     <p><b> Введите Имя:</b></p>
+     <p><input type="text" id="name" name="name" value=""></p>
+     <p><b> Введите Фамилию:</b></p>
+     <p><input type="text" id="surName" name="surName" value=""></p>
+     <p><b> Введите Логин:</b></p>
+     <p><input type="text" id="login" name="login" value=""></p>
+     <p><b> Введите Пароль:</b></p>
+     <p><input type="text" id="password" name="password" value=""></p>
+  <div class="styleButton">
+   <input type="button" onclick="location.href = 'login'" value="Back">
+   <input type="submit" onclick="location.href = 'login'"  value="Registration">
+  </div>
+ </form>
 </div>
 <script>
 
