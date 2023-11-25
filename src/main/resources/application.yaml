@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    defer-datasource-initialization: true
+
+    hibernate:
+      ddl-auto: none
+  sql:
+    init:
+      mode: always
+  datasource:
+    initialization-mode: always
+    url: jdbc:mysql://localhost:3306/mydb
+    username: root
+    password: 19900991

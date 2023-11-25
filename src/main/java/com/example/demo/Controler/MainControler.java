@@ -1,6 +1,7 @@
 package com.example.demo.Controler;
 
 import com.example.demo.DataBase.PersonDao;
+import com.example.demo.DataBase.RoleUserDao;
 import com.example.demo.DataBase.TaskDao;
 import com.example.demo.Enity.Person;
 import com.example.demo.Enity.Task;
@@ -16,12 +17,17 @@ import java.util.Map;
 
 @Controller
 public class MainControler{
+    @Autowired
+    private static long staticIdPerson;
 
     @Autowired
     private TaskDao taskDao;
 
     @Autowired
     private PersonDao personDao;
+
+    @Autowired
+    private RoleUserDao roleUserDao;
 
     public MainControler(TaskDao taskDao) {
         this.taskDao = taskDao;
@@ -40,9 +46,10 @@ public class MainControler{
     @PostMapping("/login")
     public String login(@RequestParam String login,@RequestParam String password,Map<String, Object> model) {
         Person person = personDao.getByLogin(login);
-        System.out.println(person.getPassword() + " " + password);
+
         if(person.getPassword().equals(password)) {
-            model.put("tasks",taskDao.findAll());
+            staticIdPerson = person.getId();
+            System.out.println(staticIdPerson);
             return "redirect:/tasks";
         }
         System.out.println("Логин или пароль не подошел");
@@ -55,10 +62,9 @@ public class MainControler{
     }
 
     @PostMapping("/registration")
-    public String setPerson(@RequestParam String name,@RequestParam String surName,@RequestParam String login,@RequestParam String password) {
-        Person person = new Person(name,surName,login,password);
+    public String setPerson(@RequestParam String name,@RequestParam String surName,@RequestParam String login,@RequestParam String password,@RequestParam Long personRole) {
+        Person person = new Person(name,surName,login,password,personRole);
         personDao.saveAndFlush(person);
-        System.out.println(person);
         return "redirect:/login";
     }
 
@@ -68,17 +74,18 @@ public class MainControler{
     }
 
     @PostMapping("/taskAdd")
-    public String setTask(@RequestParam String title,@RequestParam String text,@RequestParam Long id,Map<String, Object> model) {
-        Task task = new Task(title,text,new Date(),new Date(),id,new ArrayList<>());
+    public String setTask(@RequestParam String title,@RequestParam String text,@RequestParam Long id,@RequestParam Long personId,Map<String, Object> model) {
+        Task task = new Task(title,text,new Date().toString(),new Date().toString(),id,personId,"");
         taskDao.saveAndFlush(task);
-        model.put("tasks",taskDao.findAll());
+        model.put("tasks",taskDao.getById(staticIdPerson));
         return "redirect:/tasks";
     }
 
     @PostMapping("/deleteTask/{id}")
     public String deleteById(@PathVariable Long id,Map<String, Object> model) {
+
         taskDao.deleteById(id);
-        model.put("tasks",taskDao.findAll());
+        model.put("tasks",taskDao.getByPersonId(staticIdPerson));
         return "redirect:/tasks";
     }
 
@@ -90,6 +97,7 @@ public class MainControler{
 
     @GetMapping("/tasks")
     public String getTasks(Map<String, Object> model) {
+        //Task task = taskDao.getByPersonId(staticIdPerson);
         model.put("tasks",taskDao.findAll());
         return "tasks";
     }

@@ -9,10 +9,15 @@ public interface TaskDao extends JpaRepository<Task,Long> {
 
     List<Task> findAll();
 
-    Task getById(Integer id);
+    Task getById(Long id);
 
     Task getByTitle(String title);
 
     Long deleteById(Integer id);
+
+    Task getByPersonId(Long id);
+
+    Task findByPersonId(Long PersonId);
+    //Task findPersonId (Long PersonId);
 
 }

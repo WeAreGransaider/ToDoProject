@@ -16,10 +16,10 @@ public class Person {
     private String surName;
     private String login;
     private String password;
-
+    private Long personRole;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     public Person () {
@@ -30,11 +30,12 @@ public class Person {
         this.password = password;
     }
 
-    public Person(String name,String surName,String login,String password) {
+    public Person(String name,String surName,String login,String password,Long personRole) {
         this.name = name;
         this.surName = surName;
         this.login = login;
         this.password = password;
+        this.personRole = personRole;
     }
 
     @Override
@@ -44,8 +45,8 @@ public class Person {
                 ", surName='" + surName + '\'' +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
+                ", personRole='" + personRole + '\'' +
                 ", id=" + id +
                 '}';
     }
-
 }

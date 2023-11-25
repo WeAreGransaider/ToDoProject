@@ -11,30 +11,32 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
-@Table(name = "Task")
+@Table(name = "task")
 @EqualsAndHashCode
 public class Task {
 
     private String title;
     private String text;
-    private Date creationDate;
-    private Date experationDate;
+    private String creationDate;
+    private String experationDate;
+    private Long personId;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private ArrayList<String> tag;
+    private String tag;
 
     public Task() {
     }
 
-    public Task(String title, String text, Date creationDate, Date experationDate,Long id,ArrayList<String> tag) {
+    public Task(String title, String text, String creationDate, String experationDate,Long id,Long personId,String tag) {
         this.title = title;
         this.text = text;
         this.creationDate = creationDate;
         this.experationDate = experationDate;
         this.id = id;
+        this.personId = personId;
         this.tag = tag;
     }
 

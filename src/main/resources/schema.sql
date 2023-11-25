@@ -1,0 +1,38 @@
+DROP TABLE IF EXISTS wartask;
+DROP TABLE IF EXISTS task;
+DROP TABLE IF EXISTS person;
+DROP TABLE IF EXISTS role;
+
+CREATE TABLE role(
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    role VARCHAR(255) NOT NULL
+);
+CREATE TABLE person(
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    login VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    sur_name VARCHAR(255) NOT NULL,
+    person_role BIGINT NOT NULL,
+    FOREIGN KEY (person_role) REFERENCES role (id)
+);
+CREATE TABLE task(
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    creation_date VARCHAR(100) NOT NULL,
+    experation_date VARCHAR(100) NOT NULL,
+    text VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    tag VARCHAR(255) NOT NULL,
+    person_id BIGINT NOT NULL,
+    FOREIGN KEY (person_id) REFERENCES person (id)
+);
+CREATE TABLE wartask(
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    creation_data VARCHAR(100) NOT NULL,
+    experation_date VARCHAR(100) NOT NULL,
+    text VARCHAR(255) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    tag VARCHAR(255) NOT NULL,
+    person_id BIGINT NOT NULL,
+    FOREIGN KEY (person_id) REFERENCES person (id)
+);

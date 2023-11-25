@@ -213,6 +213,14 @@
   font-size: 0.95vw;
 }
 
+.regLog select {
+  font-size: 0.95vw;
+}
+
+.regLog options {
+  font-size: 2vw;
+}
+
 .styleButton input {
   font-size: 1vw;
   display: inline-block;
