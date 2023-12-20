@@ -1,16 +1,18 @@
 package com.example.demo.Enity;
 
-import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+
+import javax.persistence.*;
+
 
 @Getter
 @Setter
 @Entity
 @Table(name = "role")
 @EqualsAndHashCode
-public class RoleUser {
+public class RoleUser{
 
     private String personRole;
 

@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title> Umbrella Corporation </title>
+    <link rel="stylesheet" th:href="@{/css/loginStyle.css}">
+</head>
+<body>
+    <div class="area">
+        <ul class="cubes">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="registrationLogin">
+        <form name="test" method="post" th:action="@{/my_login}">
+
+            <p><b> Login: </b><br>
+                <input class="textLogin" id="username" name="username" type="text" size="40">
+
+            <p><b> Password: </b><br>
+                <input class="textPassword" id="password" name="password" type="text" size="40">
+            </p>
+
+            <div class="styleButton">
+                <input type="submit" value="Login">
+                <input type="button" onclick="location.href= 'registration'" value="Registration">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+ 

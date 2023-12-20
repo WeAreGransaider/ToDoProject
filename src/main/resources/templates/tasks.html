@@ -1,7 +1,7 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" th:href="@{/css/taskStyle.css}">
+  <link rel="stylesheet" th:href="@{/css/tasksStyle.css}">
 </head>
 <body>
 <div class="area" >
@@ -27,6 +27,28 @@
   </ul>
 
 </div >
+
+<div class = "profileTable">
+  <table>
+    <tr>
+      <thead>
+      <th>id</th>
+      <th>name</th>
+      <th>surName</th>
+      <th>login</th>
+      </thead>
+    </tr>
+    <tbody>
+    <tr th:each="person : ${profile}">
+      <th th:text="${person.id}"></th>
+      <th th:text="${person.name}"></th>
+      <th th:text="${person.surName}"></th>
+      <th th:text="${person.login}"></th>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
 <div class="taskTable">
 
     <table>

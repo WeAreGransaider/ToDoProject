@@ -11,6 +11,8 @@ public interface TaskDao extends JpaRepository<Task,Long> {
 
     Task getById(Long id);
 
+    Task getByIdAndPersonId(Long id,Long PersonId);
+
     Task getByTitle(String title);
 
     Long deleteById(Integer id);
@@ -18,6 +20,8 @@ public interface TaskDao extends JpaRepository<Task,Long> {
     Task getByPersonId(Long id);
 
     Task findByPersonId(Long PersonId);
-    //Task findPersonId (Long PersonId);
+
+    List<Task> findAllByPersonId(Long PersonId);
+
 
 }

@@ -27,8 +27,30 @@
     </ul>
 
 </div >
+
+<div class = "profileTable">
+    <table>
+        <tr>
+            <thead>
+            <th>id</th>
+            <th>name</th>
+            <th>surName</th>
+            <th>login</th>
+            </thead>
+        </tr>
+        <tbody>
+        <tr th:each="person : ${profile}">
+            <th th:text="${person.id}"></th>
+            <th th:text="${person.name}"></th>
+            <th th:text="${person.surName}"></th>
+            <th th:text="${person.login}"></th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
 <div class="editTask">
-    <form action="/taskAdd" method="post" >
+    <form action="/editTask" method="post" >
         <table>
             <tr>
                 <thead>
@@ -46,17 +68,18 @@
                 <th> <input type="text" id="text" name="text" th:value="${task.text}"></th>
                 <th> <input type="text" name="creationDate" th:value="${task.creationDate}"></th>
                 <th> <input type="text" name="experationDate" th:value="${task.experationDate}"></th>
-                <th> <input type="text" id="id" name=id th:value="${task.id}"></th>
+                <th> <input type="text" id="id" name="id" th:value="${task.id}"></th>
                 <th> <input type="text" name="Tag" th:value="${task.Tag}"></th>
             </tr>
             </tbody>
         </table>
+        <div class="styleButton">
+            <input type="submit" onclick="location.href= 'editTask'" value="Apply">
+            <input type="button" onclick="location.href= 'tasks'" value="Return">
+        </div>
     </form>
 
-    <div class="styleButton">
-        <input type="submit" onclick="location.href= 'tasks'" value="Apply">
-        <input type="button" onclick="location.href= 'tasks'" value="Return">
-    </div>
+
 </div>
 
 <script>

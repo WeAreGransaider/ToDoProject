@@ -1,16 +1,21 @@
 package com.example.demo.Enity;
 
-import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import javax.persistence.*;
+import java.util.Collection;
+
 @Getter
 @Setter
 @Entity
 @Table(name = "person")
 @EqualsAndHashCode
 
-public class Person {
+public class Person implements UserDetails {
 
     private String name;
     private String surName;
@@ -48,5 +53,36 @@ public class Person {
                 ", personRole='" + personRole + '\'' +
                 ", id=" + id +
                 '}';
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
+    @Override
+    public String getUsername() {
+        return login;
+    }
+
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 }

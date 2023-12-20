@@ -1,43 +1,22 @@
-<html xmlns:th="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title> Umbrella Corporation </title>
-    <link rel="stylesheet" th:href="@{/css/loginStyle.css}">
+    <title>Please Log In</title>
 </head>
 <body>
-    <div class="area">
-        <ul class="cubes">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
+<h1>Please Log In</h1>
+<div th:if="${param.error}">
+    Invalid username and password.</div>
+<div th:if="${param.logout}">
+    You have been logged out.</div>
+<form th:action="@{/login}" method="post">
+    <div>
+        <input type="text" name="username" placeholder="Username"/>
     </div>
-    <div class="registrationLogin">
-        <form name="test" method="post" th:action="@{/login}">
-
-            <p><b> Login: </b><br>
-                <input class="textLogin" id="login" name="login" type="text" size="40">
-
-            <p><b> Password: </b><br>
-                <input class="textPassword" id="password" name="password" type="text" size="40">
-            </p>
-
-            <div class="styleButton">
-                <input type="submit" value="Login">
-                <input type="button" onclick="location.href= 'registration'" value="Registration">
-            </div>
-        </form>
+    <div>
+        <input type="password" name="password" placeholder="Password"/>
     </div>
+    <input type="submit" value="Log in" />
+</form>
 </body>
 </html>
-
- 

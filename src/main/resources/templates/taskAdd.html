@@ -27,6 +27,28 @@
     </ul>
 
 </div >
+
+<div class = "profileTable">
+    <table>
+        <tr>
+            <thead>
+            <th>id</th>
+            <th>name</th>
+            <th>surName</th>
+            <th>login</th>
+            </thead>
+        </tr>
+        <tbody>
+        <tr th:each="person : ${profile}">
+            <th th:text="${person.id}"></th>
+            <th th:text="${person.name}"></th>
+            <th th:text="${person.surName}"></th>
+            <th th:text="${person.login}"></th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
 <div class="taskAddTable">
     <form action="taskAdd" method="post" >
         <table>

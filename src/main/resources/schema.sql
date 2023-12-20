@@ -26,13 +26,3 @@ CREATE TABLE task(
     person_id BIGINT NOT NULL,
     FOREIGN KEY (person_id) REFERENCES person (id)
 );
-CREATE TABLE wartask(
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    creation_data VARCHAR(100) NOT NULL,
-    experation_date VARCHAR(100) NOT NULL,
-    text VARCHAR(255) NOT NULL,
-    title VARCHAR(255) NOT NULL,
-    tag VARCHAR(255) NOT NULL,
-    person_id BIGINT NOT NULL,
-    FOREIGN KEY (person_id) REFERENCES person (id)
-);

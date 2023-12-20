@@ -1,12 +1,9 @@
 package com.example.demo.Enity;
-import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
-
-import java.util.ArrayList;
-import java.util.Date;
+import javax.persistence.*;
 
 @Getter
 @Setter
